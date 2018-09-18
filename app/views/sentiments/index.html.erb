@@ -1,0 +1,20 @@
+<h1>index</h1>
+
+<%= form_for @text do |f| %>
+  <%= f.text_area :message, placeholder: "Type something" %><br>
+  <%= f.submit "Submit", id: "button", data: {disable_with: false} %>
+<% end %>
+
+<ul class="texts">
+  <% @texts.each do |text| %>
+    <%= render partial: "test", locals: {text: text} %>
+  <% end %>
+</ul>
+
+<hr>
+
+<h1>Reponse?</h1>
+
+<!-- <% if @response %> -->
+  <%= @response %>
+<!-- <% end %> -->
